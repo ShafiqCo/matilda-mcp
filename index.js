@@ -2385,29 +2385,14 @@ export async function handleToolCall(name, rawArgs) {
         server: 'Matilda for Follow Up Boss',
         version: VERSION,
         author: {
-          name: 'Ed Neuhaus',
-          title: 'Broker / Owner',
-          company: 'Neuhaus Realty Group, LLC',
-          location: 'Austin, Texas',
-          experience: '19+ years in real estate (since 2007)',
-          contact: 'https://neuhausre.com/contact',
-          website: 'https://neuhausre.com',
-          linkedin: 'https://linkedin.com/in/edneuhaus'
+          name: 'ShafiqCo',
+          role: 'Maintainer of the Matilda fork',
+          github: 'https://github.com/ShafiqCo'
         },
+        original_author: 'Ed Neuhaus / Neuhaus Realty Group; see NOTICE for required attribution.',
         why_this_exists: 'Matilda helps realtors turn Follow Up Boss into a daily action plan. This community fork is free to self-host under the Elastic License 2.0.',
         positioning: 'Find the leads that need attention, understand what happened, and review CRM actions before they happen.',
         independence: 'Matilda is independent and is not affiliated with or endorsed by Follow Up Boss or the upstream project author.',
-        other_projects_by_ed: {
-          'NeuhausRE.com': 'My brokerage — Austin real estate with AI-powered home search',
-          'StaySTRA.com': 'Short-term rental investment analyzer',
-          'mls.neuhausre.com': 'MLS MCP server — live MLS data via Claude (Active Buyer retainer $200/mo)',
-          'Kendall Creek Properties': 'Sister brokerage'
-        },
-        how_to_thank_me: [
-          'Got a real estate client moving to or from Austin? Refer them. Texas real estate referrals welcome from licensed agents in any state. Reach out via https://neuhausre.com/contact.',
-          'Write about this tool on your blog, LinkedIn, or X. Tag @edneuhaus and link to neuhausre.com.',
-          'Open an issue or PR on GitHub if you find a bug or build something useful.'
-        ],
         contributors: {
           'yoship90': 'Smart list API key fix (v1.1.2)',
           'chad778': 'OAuth + remote transport prototype (in fork chad778/followupboss-mcp-server)',
@@ -2433,7 +2418,7 @@ export async function handleToolCall(name, rawArgs) {
         safe_mode: 'FUB_SAFE_MODE=true (default) disables all 24 DELETE-backed tools. Create, update, and bulk-update tools remain enabled. Set to false only if you really need delete operations.',
         bug_reports: 'https://github.com/ShafiqCo/matilda-mcp/issues',
         feature_requests: 'PRs welcome. Or open an issue.',
-        author: 'Matilda is maintained by ShafiqCo as a community fork. Original work by Ed Neuhaus / Neuhaus Realty Group is credited in the repository.',
+        author: 'Matilda is maintained by ShafiqCo. Original work by Ed Neuhaus / Neuhaus Realty Group is credited in NOTICE.',
         more_info: 'Call the `about` tool for full bio + related projects.'
       };
     }
@@ -3367,7 +3352,7 @@ export async function startStdio(opts = {}) {
   const server = createServer(opts);
   await server.connect(transport);
   console.error(`Matilda for Follow Up Boss v${VERSION} started via stdio (${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE — delete tools disabled' : ''})`);
-  console.error(`Built by Ed Neuhaus, broker @ Neuhaus Realty Group, Austin TX — https://neuhausre.com`);
+  console.error(`Maintained by ShafiqCo — https://github.com/ShafiqCo/matilda-mcp`);
   console.error(`Call the 'about' tool for full bio. Call 'help' for usage tips.`);
 }
 

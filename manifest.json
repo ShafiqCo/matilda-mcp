@@ -6,8 +6,8 @@
   "description": "Matilda helps realtors turn Follow Up Boss into a daily action plan. Bring your own API key.",
   "long_description": "Matilda is a local, self-hosted MCP assistant for realtors using Follow Up Boss. It helps you find leads that need attention, understand contact history, organize pipeline work, and review CRM actions before they happen.\n\nYou supply your own Follow Up Boss API key. It stays on your machine and is used to call Follow Up Boss directly. Safe Mode is on by default: delete tools are hidden, while create and update tools remain available and should still be reviewed before execution.\n\nMatilda is an independent community fork and is not affiliated with or endorsed by Follow Up Boss or the upstream project author.",
   "author": {
-    "name": "Ed Neuhaus",
-    "url": "https://neuhausre.com"
+    "name": "ShafiqCo",
+    "url": "https://github.com/ShafiqCo"
   },
   "repository": {
     "type": "git",

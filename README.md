@@ -25,23 +25,9 @@ Try prompts like:
 - “Prepare follow-up tasks for these leads and show me the changes before applying them.”
 - “Draft a follow-up email for review; do not send anything.”
 
-**Built by [Ed Neuhaus](https://neuhausre.com) — broker / owner at [Neuhaus Realty Group](https://neuhausre.com) in Austin, Texas.** Licensed real estate broker since 2009, 19+ years in the business. I built this because I wanted to talk to my own FUB account in plain English. It's free for self-host use under the [Elastic License 2.0](LICENSE).
+Matilda is maintained by ShafiqCo. This fork preserves the original copyright, contributor credits, and Elastic License. The original Follow Up Boss MCP implementation was created by Ed Neuhaus / Neuhaus Realty Group; see [NOTICE](NOTICE) for attribution.
 
-This fork preserves the original attribution and license. Matilda changes are maintained by ShafiqCo. Follow Up Boss and its trademarks belong to their respective owner; this project is not affiliated with or endorsed by Follow Up Boss.
-
-### Other things I'm working on
-
-- **[EdNeuhaus.com](https://edneuhaus.com)** — My builder profile, more on how this one's built: [edneuhaus.com/projects/fub-mcp/](https://edneuhaus.com/projects/fub-mcp/)
-- **[NeuhausRE.com](https://neuhausre.com)** — My brokerage's site, AI-powered home search
-- **[StaySTRA.com](https://staystra.com)** — Short-term rental investment analyzer
-- **[Austin MLS MCP](https://github.com/mindwear-capitian/austin-mls-mcp)** — hosted MLS MCP server (live MLS data via Claude, ChatGPT, Perplexity, and more)
-- **[Kendall Creek Properties](https://kendallcreekproperties.com)** — Sister brokerage
-
-### Want to thank me?
-
-1. **Got a real estate referral?** I take referrals from licensed agents in any state for clients moving to or from Texas. Reach out via **[neuhausre.com/contact](https://neuhausre.com/contact)**.
-2. **Write about it.** Blog post, LinkedIn, X — tag me and link to neuhausre.com.
-3. **Open an issue or PR** if you find a bug or build something useful.
+Please open a [GitHub issue](https://github.com/ShafiqCo/matilda-mcp/issues) for bugs or suggestions.
 
 > **WARNING: This tool has full read AND write access to your Follow Up Boss account.** It can create, update, and **delete** contacts, deals, tasks, notes, and other data in your CRM. **Strongly recommended: back up your FUB data before turning this loose, unless you really know what you're doing.** Always review AI-suggested actions before confirming changes to live data. The authors are not responsible for any data loss or unintended modifications to your FUB account.
 
