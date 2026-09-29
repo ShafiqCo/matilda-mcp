@@ -2,14 +2,20 @@
 
 > Matilda helps realtors turn Follow Up Boss into a daily action plan: find the leads that need attention, understand what happened, and review CRM actions before they happen.
 
-Matilda is a local, self-hosted MCP assistant for Follow Up Boss. It runs on your machine, uses your own API key, and connects directly to your CRM. It is an independent community fork maintained by [ShafiqCo](https://github.com/ShafiqCo), not an official Follow Up Boss product.
+Matilda is a small helper that lets you talk to your Follow Up Boss CRM through Claude. You can ask questions in plain English instead of clicking through your CRM for every task.
 
-## What makes Matilda different
+It runs on your own computer and uses your own Follow Up Boss account. Matilda is maintained by [ShafiqCo](https://github.com/ShafiqCo) and is not an official Follow Up Boss product.
 
-- **Daily action planning:** Ask which leads need follow-up, which deals are stale, and what is due today.
-- **Realtor-friendly prompts:** Summarize a contact before a call, find duplicates, and review a draft follow-up.
-- **Local by default:** Your API key stays on your machine; there is no Matilda hosted service in this repository.
-- **Safety-first onboarding:** Safe Mode hides delete tools by default. Review create and update actions before confirming them.
+## What can I ask Matilda to do?
+
+- Find the leads you should follow up with today.
+- Summarize a contact before you call them.
+- Find leads that have gone quiet.
+- Look up deals, tasks, appointments, notes, and recent activity.
+- Prepare a follow-up task or email for your review.
+- Find possible duplicate contacts.
+
+Matilda does not replace your judgment. It helps you find the right information and prepare the next action.
 
 Try prompts like:
 
@@ -58,6 +64,51 @@ This fork preserves the original attribution and license. Matilda changes are ma
 
 > **License note:** This project moved from MIT to **[Elastic License 2.0](LICENSE)** in v1.1.2. You may use, modify, and self-host for your own business at no cost. You may **not** offer it as a hosted/managed service to third parties. For commercial hosting rights, reach out via [neuhausre.com/contact](https://neuhausre.com/contact). Versions ≤ v1.1.1 remain MIT-licensed.
 
+## Before you start
+
+You need:
+
+1. A Follow Up Boss account with API access.
+2. Claude Desktop on your computer.
+3. Node.js 18 or newer.
+4. Your Follow Up Boss API key.
+
+Your API key is like a password. Keep it private and never post it in a screenshot, message, or GitHub issue.
+
+## Quick setup
+
+### 1. Download Matilda
+
+Open Terminal and run:
+
+```bash
+git clone https://github.com/ShafiqCo/matilda-mcp.git
+cd matilda-mcp
+npm install
+```
+
+### 2. Connect your Follow Up Boss account
+
+Run:
+
+```bash
+npm run setup
+```
+
+The setup wizard will ask for your API key, test the connection, and create your local settings.
+
+Choose **Safe Mode** when asked. It hides delete tools. Matilda can still create or update CRM records, so ask it to show you proposed changes before you approve them.
+
+### 3. Connect Matilda to Claude Desktop
+
+The setup wizard prints the exact configuration to copy into Claude Desktop. Then fully quit and reopen Claude Desktop.
+
+### 4. Try your first question
+
+Ask Claude:
+
+> Show me the leads I need to follow up with today. Do not change anything.
+
 ## What This Does
 
 This server acts as a bridge between your Follow Up Boss account and AI tools like Claude. Once connected, you can talk to Claude in plain English and it will read, create, update, and manage your FUB data directly.
@@ -84,15 +135,17 @@ This server acts as a bridge between your Follow Up Boss account and AI tools li
 - **Webhooks** -- Set up and manage webhook integrations
 - **And more** -- Inbox apps, reactions, threaded replies, email marketing campaigns, timeframes
 
-## What You'll Need
+## Advanced setup details
 
 1. **A Follow Up Boss account** with API access (most paid plans include this)
 2. **Claude Desktop**, **Claude Code**, or any MCP-compatible AI tool
 3. **Node.js 18 or higher** -- This is a free tool that runs JavaScript. If you don't have it, download it from [nodejs.org](https://nodejs.org/) (choose the LTS version)
 
-## Setup (5 Minutes)
+The Quick setup above is the recommended path. The details below are useful if you are installing Matilda manually or using a different MCP client.
 
-### Step 1: Get Your FUB API Key
+### Manual setup reference
+
+#### Get your Follow Up Boss API key
 
 Your API key is like a password that lets this server talk to your FUB account.
 
@@ -100,13 +153,13 @@ Your API key is like a password that lets this server talk to your FUB account.
 2. Go to **Admin** (top menu) > **API**
 3. Copy your API key (it looks like a long string of letters and numbers)
 
-### Step 2: Download & Install
+#### Download and install manually
 
 **If you know git:**
 
 ```bash
-git clone https://github.com/mindwear-capitian/followupboss-mcp-server.git
-cd followupboss-mcp-server
+git clone https://github.com/ShafiqCo/matilda-mcp.git
+cd matilda-mcp
 npm install
 ```
 
@@ -125,7 +178,7 @@ npm install
    npm install
    ```
 
-### Step 3: Run Setup
+#### Run the setup wizard manually
 
 ```bash
 npm run setup
