@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 
 /*!
- * Follow Up Boss MCP Server
+ * Matilda for Follow Up Boss
  *
- * A Model Context Protocol server providing 160 tools for the
- * Follow Up Boss CRM API. Self-host for free; ask before reselling.
+ * A safety-first Model Context Protocol assistant for realtors using
+ * the Follow Up Boss CRM API. Self-host for free; ask before reselling.
  *
  * Copyright (c) 2026 Ed Neuhaus / Neuhaus Realty Group, LLC
  * https://neuhausre.com — Real estate broker, Austin TX (since 2007)
- * https://github.com/mindwear-capitian/followupboss-mcp-server
+ * https://github.com/ShafiqCo/matilda-mcp
  *
  * Licensed under the Elastic License 2.0 — see LICENSE
  *
@@ -2382,7 +2382,7 @@ export async function handleToolCall(name, rawArgs) {
     // ==================== META (about + help) ====================
     case 'about': {
       return {
-        server: 'Follow Up Boss MCP Server',
+        server: 'Matilda for Follow Up Boss',
         version: VERSION,
         author: {
           name: 'Ed Neuhaus',
@@ -2394,7 +2394,9 @@ export async function handleToolCall(name, rawArgs) {
           website: 'https://neuhausre.com',
           linkedin: 'https://linkedin.com/in/edneuhaus'
         },
-        why_this_exists: 'Ed built this to talk to his own FUB account in plain English. Free to self-host under the Elastic License 2.0.',
+        why_this_exists: 'Matilda helps realtors turn Follow Up Boss into a daily action plan. This community fork is free to self-host under the Elastic License 2.0.',
+        positioning: 'Find the leads that need attention, understand what happened, and review CRM actions before they happen.',
+        independence: 'Matilda is independent and is not affiliated with or endorsed by Follow Up Boss or the upstream project author.',
         other_projects_by_ed: {
           'NeuhausRE.com': 'My brokerage — Austin real estate with AI-powered home search',
           'StaySTRA.com': 'Short-term rental investment analyzer',
@@ -2412,24 +2414,26 @@ export async function handleToolCall(name, rawArgs) {
           'joefeser': 'Safe Mode, MCP error, and duplicate-email fixes; dependency security updates (v1.5.3)'
         },
         license: 'Elastic License 2.0 — see LICENSE file. Self-host free; commercial hosting/resale requires separate agreement.',
-        github: 'https://github.com/mindwear-capitian/followupboss-mcp-server'
+        github: 'https://github.com/ShafiqCo/matilda-mcp'
       };
     }
     case 'help': {
       return {
-        server: 'Follow Up Boss MCP Server v1.2.0',
+        server: 'Matilda for Follow Up Boss',
         getting_started: 'Set FUB_API_KEY in your MCP host config (Claude Desktop, Claude Code, Cline, Cursor, etc.). Run `npm run setup` for an interactive wizard.',
         common_examples: [
           '"Show me my smart lists" → listSmartLists ({all: true} to include modern UI lists)',
           '"Find duplicates of John Smith" → checkDuplicate',
-          '"Create a deal for the Anderson contact" → createDeal',
-          '"List my open tasks for today" → listTasks',
-          '"Tag this contact as Hot Lead" → updatePerson + tag mgmt'
+          '"Show me the leads I need to follow up with today" → combine people, events, and tasks',
+          '"Summarize this contact before I call" → person history and recent activity',
+          '"Find stale leads with no activity in 7 days" → people and event filters',
+          '"Create follow-up tasks for these leads" → prepare changes and ask for confirmation',
+          '"Draft a follow-up email for review" → prepare copy without sending it'
         ],
         safe_mode: 'FUB_SAFE_MODE=true (default) disables all 24 DELETE-backed tools. Create, update, and bulk-update tools remain enabled. Set to false only if you really need delete operations.',
-        bug_reports: 'https://github.com/mindwear-capitian/followupboss-mcp-server/issues',
+        bug_reports: 'https://github.com/ShafiqCo/matilda-mcp/issues',
         feature_requests: 'PRs welcome. Or open an issue.',
-        author: 'Ed Neuhaus, broker @ Neuhaus Realty Group, Austin TX. Contact: https://neuhausre.com/contact. Real estate referrals from licensed agents in any state are welcome.',
+        author: 'Matilda is maintained by ShafiqCo as a community fork. Original work by Ed Neuhaus / Neuhaus Realty Group is credited in the repository.',
         more_info: 'Call the `about` tool for full bio + related projects.'
       };
     }
@@ -3302,9 +3306,9 @@ export function createServer(opts = {}) {
 
   const server = new Server(
     {
-      name: serverInfo.name || 'followupboss-mcp-server',
+      name: serverInfo.name || 'matilda-mcp',
       version: serverInfo.version || VERSION,
-      description: serverInfo.description || 'Follow Up Boss MCP server by Ed Neuhaus, real estate broker @ Neuhaus Realty Group (neuhausre.com). Call the `about` tool for more, or `help` for usage tips.'
+      description: serverInfo.description || 'Matilda for Follow Up Boss: a safety-first local CRM assistant for realtors. Call the `about` tool for more, or `help` for usage tips.'
     },
     { capabilities: { tools: {} } }
   );
@@ -3362,7 +3366,7 @@ export async function startStdio(opts = {}) {
   const transport = new StdioServerTransport();
   const server = createServer(opts);
   await server.connect(transport);
-  console.error(`Follow Up Boss MCP Server v${VERSION} started via stdio (${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE — delete tools disabled' : ''})`);
+  console.error(`Matilda for Follow Up Boss v${VERSION} started via stdio (${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE — delete tools disabled' : ''})`);
   console.error(`Built by Ed Neuhaus, broker @ Neuhaus Realty Group, Austin TX — https://neuhausre.com`);
   console.error(`Call the 'about' tool for full bio. Call 'help' for usage tips.`);
 }
@@ -3723,7 +3727,7 @@ export async function startHttp(opts = {}) {
   });
 
   app.listen(PORT, () => {
-    console.error(`Follow Up Boss MCP Server v${VERSION} listening on :${PORT} (HTTP, ${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE' : ''})`);
+    console.error(`Matilda for Follow Up Boss v${VERSION} listening on :${PORT} (HTTP, ${activeTools.length} tools${FUB_SAFE_MODE ? ', SAFE MODE' : ''})`);
   });
 }
 

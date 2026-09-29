@@ -417,3 +417,10 @@ All five now route through a generalized `requireSystemCreds` guard (extending t
 ### Added
 - Initial release with 152 tools covering 100% of the official Follow Up Boss API
 - Interactive setup wizard
+# Matilda fork
+
+## Unreleased
+
+- Rebranded the local Follow Up Boss MCP as Matilda for Follow Up Boss.
+- Added realtor-focused onboarding, prompts, safety, and data-handling guidance.
+- Updated repository metadata and MCP registry links for ShafiqCo/matilda-mcp.

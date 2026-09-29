@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Follow Up Boss MCP Server - Setup Wizard
+ * Matilda for Follow Up Boss - Setup Wizard
  *
  * Interactive setup that:
  * 1. Asks for your FUB API key
@@ -44,7 +44,7 @@ async function testConnection(apiKey) {
 async function main() {
   console.log('');
   console.log('===========================================');
-  console.log('  Follow Up Boss MCP Server - Setup');
+  console.log('  Matilda for Follow Up Boss - Setup');
   console.log('===========================================');
   console.log('');
   console.log('This will set up your connection to Follow Up Boss.');
@@ -87,11 +87,11 @@ async function main() {
   }
 
   // Safe mode question
-  console.log('Choose an installation mode:');
+  console.log('Choose a Matilda safety mode:');
   console.log('');
   console.log('  1. Safe Mode (recommended)');
   console.log('     Read, create, and update your FUB data.');
-  console.log('     Delete tools are DISABLED. Nothing can be deleted.');
+  console.log('     Delete tools are DISABLED. Review changes before confirming them.');
   console.log('');
   console.log('  2. Full Access');
   console.log('     All 160 tools enabled, including delete operations.');
@@ -136,7 +136,7 @@ function printNextSteps(safeMode) {
 
   console.log('');
   console.log('===========================================');
-  console.log('  Next Steps: Connect to Claude');
+  console.log('  Next Steps: Connect Matilda to Claude');
   console.log('===========================================');
   console.log('');
   console.log(`Mode: ${safeMode ? 'SAFE MODE (delete tools disabled)' : 'FULL ACCESS (all tools enabled)'}`);
@@ -150,7 +150,7 @@ function printNextSteps(safeMode) {
   console.log('');
   console.log(JSON.stringify({
     mcpServers: {
-      "followupboss": {
+      "matilda": {
         command: "node",
         args: [`${fullPath}/index.js`],
         env: envBlock
@@ -163,10 +163,10 @@ function printNextSteps(safeMode) {
   console.log('');
   console.log('OPTION 2: Claude Code');
   console.log('');
-  console.log(`  claude mcp add followupboss node ${fullPath}/index.js`);
+  console.log(`  claude mcp add matilda node ${fullPath}/index.js`);
   console.log('');
   console.log('Then restart Claude and try asking:');
-  console.log('  "Show me my recent leads in Follow Up Boss"');
+  console.log('  "Show me the leads I need to follow up with today"');
   console.log('');
 }
 

@@ -1,8 +1,27 @@
-# Follow Up Boss MCP Server — Built for Realtors
+# Matilda for Follow Up Boss
 
-> Talk to your Follow Up Boss CRM in plain English from Claude AI (or any MCP-compatible tool). 160 tools covering 100% of the official API, plus `about`/`help` meta tools. Built by a working real estate broker, not a dev shop.
+> Matilda helps realtors turn Follow Up Boss into a daily action plan: find the leads that need attention, understand what happened, and review CRM actions before they happen.
+
+Matilda is a local, self-hosted MCP assistant for Follow Up Boss. It runs on your machine, uses your own API key, and connects directly to your CRM. It is an independent community fork maintained by [ShafiqCo](https://github.com/ShafiqCo), not an official Follow Up Boss product.
+
+## What makes Matilda different
+
+- **Daily action planning:** Ask which leads need follow-up, which deals are stale, and what is due today.
+- **Realtor-friendly prompts:** Summarize a contact before a call, find duplicates, and review a draft follow-up.
+- **Local by default:** Your API key stays on your machine; there is no Matilda hosted service in this repository.
+- **Safety-first onboarding:** Safe Mode hides delete tools by default. Review create and update actions before confirming them.
+
+Try prompts like:
+
+- “Show me the leads I need to follow up with today.”
+- “Summarize this contact before I call.”
+- “Find stale leads with no activity in 7 days.”
+- “Prepare follow-up tasks for these leads and show me the changes before applying them.”
+- “Draft a follow-up email for review; do not send anything.”
 
 **Built by [Ed Neuhaus](https://neuhausre.com) — broker / owner at [Neuhaus Realty Group](https://neuhausre.com) in Austin, Texas.** Licensed real estate broker since 2009, 19+ years in the business. I built this because I wanted to talk to my own FUB account in plain English. It's free for self-host use under the [Elastic License 2.0](LICENSE).
+
+This fork preserves the original attribution and license. Matilda changes are maintained by ShafiqCo. Follow Up Boss and its trademarks belong to their respective owner; this project is not affiliated with or endorsed by Follow Up Boss.
 
 ### Other things I'm working on
 
@@ -42,6 +61,15 @@
 ## What This Does
 
 This server acts as a bridge between your Follow Up Boss account and AI tools like Claude. Once connected, you can talk to Claude in plain English and it will read, create, update, and manage your FUB data directly.
+
+## Matilda safety and data handling
+
+- Start in **Safe Mode**. It hides delete tools, but create and update tools can still change live CRM data.
+- Ask Matilda to show proposed changes before applying them, especially for bulk updates, tasks, notes, and contacts.
+- Use “draft” or “prepare” when you want an email or message reviewed without sending or logging it.
+- Your API key is read from the local `.env` file or MCP host configuration. Never commit it, paste it into a public issue, or include it in a demo.
+- This project does not provide a hosted Matilda service. The local server sends API requests directly to Follow Up Boss.
+- Do not configure `FUB_SYSTEM` or `FUB_SYSTEM_KEY` unless Follow Up Boss issued those credentials to your own registered system.
 
 **What you can do:**
 

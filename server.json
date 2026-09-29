@@ -1,18 +1,18 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "com.neuhausre/followupboss",
-  "title": "Follow Up Boss",
-  "description": "Follow Up Boss CRM in plain English. 160 tools; bring your own API key.",
+  "name": "com.shafiqco/matilda",
+  "title": "Matilda for Follow Up Boss",
+  "description": "A safety-first local CRM assistant for realtors using Follow Up Boss.",
   "version": "1.5.3",
-  "websiteUrl": "https://neuhausre.com/fub-mcp/",
+  "websiteUrl": "https://trymatilda.com",
   "repository": {
-    "url": "https://github.com/mindwear-capitian/followupboss-mcp-server",
+    "url": "https://github.com/ShafiqCo/matilda-mcp",
     "source": "github"
   },
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/mindwear-capitian/followupboss-mcp-server/releases/download/v1.5.3/followupboss-mcp-server-1.5.3.mcpb",
+      "identifier": "https://github.com/ShafiqCo/matilda-mcp/releases/download/v1.5.3/matilda-mcp-1.5.3.mcpb",
       "version": "1.5.3",
       "fileSha256": "6dbf0e0c488aae39eefec6bba58b121f5c02cf6b5ea8a85b9f6649f85198badd",
       "transport": {
